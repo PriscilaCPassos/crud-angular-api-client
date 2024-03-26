@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="text-center px-6 mb-2 py-6"> Clientes Cadastrados </h1>
+  <div class="text-end mb-2">
+    <button class="btn btn-outline-success" routerLink="cadastrar">
+       Novo cadastro
+    </button>
+  </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Cel</th>
+              <th>CPF</th>
+              <th>Resgitro do Usuário</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(client of clients; track client.id) {
+              <tr ng-repeat="client in clients track by client.id" ng-class="getColorClass($index)">
+                <td>{{ client.id }}</td>
+                <td>{{ client.name }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.cel }}</td>
+                <td>{{ client.cpf }}</td>
+                <td>{{ client.registryUser }}</td>
+                <td class="text-end">
+                  <div class="btn-group">
+                    <button class="btn btn-outline-success" [routerLink]="[client.id, 'edit']">
+                      Editar
+                    </button>
+                    <button class="btn btn-outline-danger ms-2" (click)="deleteClient(client)">
+                      Excluir
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+
+

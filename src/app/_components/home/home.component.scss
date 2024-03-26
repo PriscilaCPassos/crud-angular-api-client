@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+
+  span {
+      font-size: 16px;
+      font-weight: 700;
+
+  }
+
+
+  h1 {
+      font-size: 36px;
+      font-weight: 900;
+  }
+
+  img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      margin-left: 20px;
+  }
+
+}
