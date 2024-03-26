@@ -5,13 +5,6 @@ export const routes: Routes = [
 
   { path:'', component: HomeComponent},
 
- /* { path:'cadastrar', component: ClientFormComponent},
-
-  { path:'listar', component: ClientListComponent},
-
- */
-
-
   {
     path: 'listar',
     loadComponent: () => import('./client-list/client-list.component')

@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   standalone: true,
   imports: [
-    NgOptimizedImage
-  ],
+    NgOptimizedImage,
+    ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

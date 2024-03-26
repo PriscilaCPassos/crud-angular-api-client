@@ -1,7 +1,7 @@
-import { DatePipe } from '@angular/common';
+//import { DatePipe } from '@angular/common';
 import { ClientService } from './../services/client.service';
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { Client } from '../model/client.interface';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -9,9 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   selector: 'app-client-list',
   standalone: true,
   imports: [
-    DatePipe,
+   // DatePipe,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './client-list.component.html',
   styleUrl: './client-list.component.scss'
