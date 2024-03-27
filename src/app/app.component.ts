@@ -5,6 +5,7 @@ import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
 import { FooterComponent } from "./_components/footer/footer.component";
 import { HomeComponent } from './_components/home/home.component';
 import { CommonModule } from '@angular/common';
+import ClientFormComponent from './client-form/client-form.component';
 
 @Component({
     selector: 'app-root',
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
       CommonModule,
       RouterModule,
       RouterLink,
-    ]
+      ClientFormComponent,
+    ],
 })
 export class AppComponent {
   title = 'crud-client';

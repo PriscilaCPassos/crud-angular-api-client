@@ -1,22 +1,22 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './_components/home/home.component';
+import ClientListComponent from './client-list/client-list.component';
+import ClientFormComponent from './client-form/client-form.component';
 
 export const routes: Routes = [
 
   { path:'', component: HomeComponent},
 
   {
-    path: 'listar',
-    loadComponent: () => import('./client-list/client-list.component')
+    path: 'listar', component: ClientListComponent
   },
 
   {
-    path: 'cadastrar',
-    loadComponent: () => import('./client-form/client-form.component')
+    path: 'cadastrar', component: ClientFormComponent
   },
 
   {
-    path: ':id/edit',
+    path: 'listar/:id/edit',
     loadComponent: () => import('./client-form/client-form.component')
   }
 

@@ -37,11 +37,11 @@ export default class ClientFormComponent implements OnInit {
      .subscribe(client => {
       this.client = client;
         this.form = this.formB.group({
-          name: ['client.name', [Validators.required]],
-          email: ['client.email', [Validators.required, Validators.email]],
-          cel: ['client.cel', [Validators.required]],
-          cpf: ['client.cpf', [Validators.required]],
-          registryUser: ['client.registryUser', [Validators.required]],
+          name: [client.name, [Validators.required]],
+          email: [client.email, [Validators.required, Validators.email]],
+          cel: [client.cel, [Validators.required]],
+          cpf: [client.cpf, [Validators.required]],
+          registryUser: [client.registryUser, [Validators.required]],
         });
      })
    } else {
@@ -66,13 +66,13 @@ export default class ClientFormComponent implements OnInit {
     if (this.client) {
       this.clientService.update(this.client.id, clientForm)
       .subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/listar']);
     });
 
     } else {
       this.clientService.create(clientForm)
       .subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/listar']);
       });
     }
   }
