@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export default class ClientListComponent implements OnInit {
   private clientService = inject (ClientService);
 
+
   clients: Client [] = [];
 
   ngOnInit(): any {
@@ -36,10 +37,14 @@ export default class ClientListComponent implements OnInit {
   }
 
   deleteClient(client: Client) {
-    this.clientService.delete(client.id)
-    .subscribe(() => {
-      this.loadAll();
-    });
+    if(confirm('Deseja realmente excluir esse cliente?')){
+      this.clientService.delete(client.id)
+      .subscribe(() => {
+        this.loadAll();
+        alert("Cliente excluído com sucesso");
+      });
+    } else {
+      alert("Operação cancelada!");
+    }
   }
-
 }

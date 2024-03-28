@@ -6,6 +6,8 @@ import { FooterComponent } from "./_components/footer/footer.component";
 import { HomeComponent } from './_components/home/home.component';
 import { CommonModule } from '@angular/common';
 import ClientFormComponent from './client-form/client-form.component';
+import ClientListComponent from './client-list/client-list.component';
+
 
 @Component({
     selector: 'app-root',
@@ -22,6 +24,8 @@ import ClientFormComponent from './client-form/client-form.component';
       RouterModule,
       RouterLink,
       ClientFormComponent,
+      ClientListComponent,
+
     ],
 })
 export class AppComponent {
